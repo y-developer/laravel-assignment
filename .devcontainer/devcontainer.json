@@ -1,0 +1,13 @@
+{
+    "name": "pekoe-members-portal-dc",
+    "dockerComposeFile": "./compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client"
+            ]
+        }
+    }
+}

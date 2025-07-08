@@ -1,0 +1,35 @@
+services:
+  devcontainer:
+    image: ghcr.io/pekoe-trail/pekoe-members-portal-devcontainer:latest
+    container_name: pos-laravel-dc
+    networks:
+      - laravel-assignment-net
+    depends_on:
+      - db
+    ports:
+      - 8000:8000
+    volumes:
+      - ../:/workspace:cached
+    command: sleep infinity
+
+  db:
+    image: mysql:8
+    container_name: pos-laravel-db
+    environment:
+      - MYSQL_USER=db_user
+      - MYSQL_PASSWORD=db_pass
+      - MYSQL_DATABASE=laravel_assignment_db
+      - MYSQL_ROOT_PASSWORD=root_pass
+    ports:
+      - 3306:3306
+    networks:
+      - laravel-assignment-net
+    volumes:
+      - laravel-assignment_db_data:/var/lib/mysql
+
+volumes:
+  laravel-assignment_db_data:
+
+networks:
+  laravel-assignment-net:
+    external: true
