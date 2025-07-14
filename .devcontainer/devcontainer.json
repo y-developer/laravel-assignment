@@ -1,5 +1,5 @@
 {
-    "name": "pekoe-members-portal-dc",
+    "name": "pos-laravel-dc",
     "dockerComposeFile": "./compose.yml",
     "service": "devcontainer",
     "workspaceFolder": "/workspace",
